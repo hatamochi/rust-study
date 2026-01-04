@@ -1,23 +1,12 @@
 fn main () {
-    let name = "hatamochi";
-    let level: u32 = 33;
-    let hitpoint : f32 = 75.5;
-    let flg : bool = true;
+    let mut level : u32 = 33;
+    println!("今のレベル：{}",  level);
 
-    println!("名前：{} レベル：{} 体力：{} 生存フラグ：{}",name, level, hitpoint, flg);
+    level = level_up(level); //関数を呼び出して結果を代入
 
-    if level >= 30 {
-        println!("あなたはベテランプレイヤー");
-    } else {
-        println!("まだ始まったばかり");
-    }
+    println!("レベルアップ！：{}", level);
+}
 
-    let mut count = 0;
-    loop {
-        count += 1;
-        if count == 3{
-            println!("ループ終了");
-            break;
-        }
-    }
+fn level_up(level : u32) -> u32 {
+    level + 1
 }
